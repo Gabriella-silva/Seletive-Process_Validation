@@ -5,8 +5,11 @@ public class ProcessoSeletivo{
     }
     static void analisarCandidato( double salarioPrtendido){
         double salarioBase = 2000.0;
-        if(salarioBase > salarioPrtendido)
+        if(salarioBase > salarioPrtendido){
         System.out.println("LIGAR PARA O CANDIDATO");
-        else if()
+        }
+        else if(salarioBase == salarioPrtendido){
+            System.out.println("AGUARDANDO DEMAIS CANDIDATOS");
+        }
     }
 }
