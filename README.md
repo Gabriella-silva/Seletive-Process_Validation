@@ -1,2 +1,7 @@
-# Seletive-Process_Validation
-Este projeto em Java foi desenvolvido para validar processos seletivos de forma eficiente, utilizando conceitos de Programação Orientada a Objetos (POO).
+# Validação de Processos Seletivos em Java
+
+Este projeto tem como objetivo implementar um sistema de validação de processos seletivos utilizando conceitos de Programação Orientada a Objetos (POO) em Java. O sistema permite gerenciar candidatos, vagas e validar se os candidatos atendem aos requisitos das vagas.
+
+
+
+
