@@ -9,8 +9,17 @@ public class ProcessoSeletivo {
 
         // Chamando o método para selecionar candidatos
         selecaoCandidatos();
+        ImprimirCandidatos();
     }
+static void ImprimirCandidatos (){
+    String[] candidatos = {"Felipe", "Marcia", "Julia", "Paulo", "Augusto", "Monica", "Fabricio"};
+System.out.println("Imprimindo a lista de candidatos informando o indice do Elemento");
 
+for(int indice = 0; indice < candidatos.length; indice++){
+    System.out.println("Indice: " + (indice+1) + " - Candidato: " + candidatos[indice]);
+}
+
+}
     static void selecaoCandidatos() {
         String[] candidatos = {"Felipe", "Marcia", "Julia", "Paulo", "Augusto", "Monica", "Fabricio"};
 
