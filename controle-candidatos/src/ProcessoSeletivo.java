@@ -1,36 +1,49 @@
-//biblioteca random
 import java.util.concurrent.ThreadLocalRandom;
-public class ProcessoSeletivo{
-    public static void main (String[] Args){
-        /*analisarCandidato(1900.0);
+
+public class ProcessoSeletivo {
+    public static void main(String[] Args) {
+        // Chamando o método para analisar candidatos
+        analisarCandidato(1900.0);
         analisarCandidato(2200.0);
         analisarCandidato(2000.0);
-    }*/}
-    static void selecaoCandidatos (){
-        String [] candidatos = {"Felipe", "Marcia", " Julia", "Paulo", "Augusto", "Monica", "Fabricio"};
+
+        // Chamando o método para selecionar candidatos
+        selecaoCandidatos();
     }
 
+    static void selecaoCandidatos() {
+        String[] candidatos = {"Felipe", "Marcia", "Julia", "Paulo", "Augusto", "Monica", "Fabricio"};
 
-    static void analisarCandidato( double salarioPrtendido){
+        int candidatosSelecionados = 0;
+        int candidatosAtual = 0;
         double salarioBase = 2000.0;
-            if(salarioBase > salarioPrtendido){
-        System.out.println("LIGAR PARA O CANDIDATO");
+
+        while (candidatosSelecionados < 5 && candidatosAtual < candidatos.length) {
+            String candidato = candidatos[candidatosAtual];
+            double salarioPretendido = valorPretendido();
+
+            System.out.println("O candidato " + candidato + " solicitou este salário: " + salarioPretendido);
+            if (salarioBase >= salarioPretendido) {
+                System.out.println("O candidato selecionado foi: " + candidato);
+                candidatosSelecionados++;
+            }
+            candidatosAtual++;
         }
-            else if(salarioBase == salarioPrtendido){
+    }
+
+    static void analisarCandidato(double salarioPretendido) {
+        double salarioBase = 2000.0;
+        if (salarioBase > salarioPretendido) {
+            System.out.println("LIGAR PARA O CANDIDATO");
+        } else if (salarioBase == salarioPretendido) {
             System.out.println("LIGAR PARA O CANDIDATO COM CONTRA PROPOSTA");
+        } else {
+            System.out.println("AGUARDANDO DEMAIS CANDIDATOS");
         }
-            else{
-        System.out.println("AGUARDANDO DEMAIS CANDIDATOS");
-    }
     }
 
-    /*Case 2 : Foi solicitado que nosso sistema garanta que sejamm selecionados apenas 5 candidaturas onde o salario seja menor ou igual */
-
-//biblioteca random
-static double valolorPretendido(){
-    return ThreadLocalRandom.current().nextDouble(1800, 2200);
-}
-
-
-
+    // Método para gerar um valor de salário pretendido aleatório
+    static double valorPretendido() {
+        return ThreadLocalRandom.current().nextDouble(1800, 2200);
+    }
 }
