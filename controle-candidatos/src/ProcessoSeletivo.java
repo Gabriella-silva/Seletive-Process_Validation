@@ -10,7 +10,11 @@ public class ProcessoSeletivo {
         // Chamando o método para selecionar candidatos
         selecaoCandidatos();
         ImprimirCandidatos();
+       
+
     }
+
+
 static void ImprimirCandidatos (){
     String[] candidatos = {"Felipe", "Marcia", "Julia", "Paulo", "Augusto", "Monica", "Fabricio"};
 System.out.println("Imprimindo a lista de candidatos informando o indice do Elemento");
@@ -50,9 +54,27 @@ for(int indice = 0; indice < candidatos.length; indice++){
             System.out.println("AGUARDANDO DEMAIS CANDIDATOS");
         }
     }
-
-    // Método para gerar um valor de salário pretendido aleatório
+ // Método para gerar um valor de salário pretendido aleatório
     static double valorPretendido() {
         return ThreadLocalRandom.current().nextDouble(1800, 2200);
+    }
+//Simular apartir de uma expressão randomica um valor entre 1 e 3 se for igual a 1 o candidato atendeu
+    static boolean atender{
+        return new Random().nextInt(3)==1;
+
+    }
+    static void case4(String candidato){
+        int tentativasRealizadas = 1;
+        boolean continuarTentando = true;
+        boolean atendeu = false;
+        do{
+            atendeu= atender();
+            continuarTentando = !atendeu;
+            if (continuarTentando)
+                tentativasRealizadas++;
+            
+        }while(continuarTentando && tentativasRealizadas <= 3);
+        if(atendeu){
+            System.out.println("O candidato " + candidato + " atendeu a ligação na tentativa " + tentativasRealizadas);
     }
 }
